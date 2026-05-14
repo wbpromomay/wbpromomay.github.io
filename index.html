@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildberries — Юбилейный розыгрыш</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #7b1fa2, #e91e63);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Анимированные звёзды */
+        .star {
+            position: absolute;
+            color: #ffd700;
+            font-size: 28px;
+            animation: twinkle 3s infinite;
+            opacity: 0.9;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 20px 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            margin: 20px 0 15px;
+        }
+        .wb-logo {
+            font-size: 58px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 25px rgba(255,255,255,0.7);
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            font-size: 26px;
+            margin: 10px 0 25px;
+            font-weight: 500;
+        }
+
+        .main-prize {
+            background: rgba(255,255,255,0.15);
+            border: 3px solid rgba(255,255,255,0.7);
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin: 30px auto;
+            max-width: 700px;
+            backdrop-filter: blur(10px);
+        }
+        .prize-amount {
+            font-size: 62px;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 0 0 20px #000;
+        }
+
+        .info-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        .box {
+            background: rgba(255,255,255,0.12);
+            border-radius: 18px;
+            padding: 25px 20px;
+            width: 280px;
+            backdrop-filter: blur(8px);
+        }
+
+        .btn {
+            background: white;
+            color: #7b1fa2;
+            padding: 18px 60px;
+            font-size: 24px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 35px 0;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-6px) scale(1.05);
+            background: #ffd700;
+        }
+
+        footer {
+            margin-top: 50px;
+            opacity: 0.95;
+            font-size: 15px;
+        }
+
+        /* Самолёт */
+        .plane {
+            position: absolute;
+            font-size: 70px;
+            top: 80px;
+            left: -100px;
+            animation: fly 25s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes fly {
+            0% { transform: translateX(-100px) rotate(-8deg); }
+            100% { transform: translateX(120vw) rotate(8deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Анимированный самолёт -->
+    <div class="plane">✈️</div>
+
+    <!-- Анимированные звёзды -->
+    <div class="star" style="top: 15%; left: 8%; animation-delay: 0s;">⭐</div>
+    <div class="star" style="top: 25%; left: 15%; animation-delay: 1.2s;">✨</div>
+    <div class="star" style="top: 12%; left: 75%; animation-delay: 0.8s;">⭐</div>
+    <div class="star" style="top: 45%; left: 85%; animation-delay: 2.1s;">✨</div>
+    <div class="star" style="top: 65%; left: 12%; animation-delay: 0.5s;">⭐</div>
+    <div class="star" style="top: 78%; left: 68%; animation-delay: 1.8s;">✨</div>
+
+    <div class="container">
+        <div class="header">
+            <div class="wb-logo">wildberries</div>
+            <p class="subtitle">ЮБИЛЕЙНЫЙ РОЗЫГРЫШ ПРИЗОВ</p>
+        </div>
+
+        <div class="main-prize">
+            <p style="margin:0; font-size:21px;">ГЛАВНЫЙ ПРИЗ</p>
+            <p class="prize-amount">1 000 000 ₽</p>
+            <p style="margin:12px 0 0; font-size:20px;">на ваш счёт Wildberries</p>
+        </div>
+
+        <div class="info-boxes">
+            <div class="box">
+                <strong>ПРИЗЫ</strong><br><br>
+                <span style="font-size:27px; color:#ffd700;">от 100 до 400 000 ₽</span><br>
+                на счёт или большие скидки
+            </div>
+            <div class="box">
+                <strong>КАК УЧАСТВОВАТЬ</strong><br><br>
+                Просто нажмите кнопку ниже<br>
+                и активируйте участие
+            </div>
+        </div>
+
+        <button class="btn" onclick="goToOffer()">
+            УЧАСТВОВАТЬ В РОЗЫГРЫШЕ →
+        </button>
+
+        <p style="margin-top:25px; font-size:18px; opacity:0.9;">
+            Страница автоматически перейдёт через <strong>1 секунду</strong>...
+        </p>
+
+        <footer>
+            Акция 2026 года • 18+ • Только для России<br>
+            Количество призов ограничено
+        </footer>
+    </div>
+
+    <script>
+        function goToOffer() {
+            window.location.href = "https://gamecraft.online";
+        }
+
+        // Задержка 1 сек
+        setTimeout(goToOffer, 1000);
+    </script>
+</body>
+</html>
